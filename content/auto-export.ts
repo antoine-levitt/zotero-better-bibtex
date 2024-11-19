@@ -271,6 +271,7 @@ const queue = new class TaskQueue {
   }
 
   public run(path: string) {
+    log.debug('starting autoexport', path)
     this.runAsync(path).catch(err => log.error(`autoexport failed: ${ path }`, err))
   }
 
