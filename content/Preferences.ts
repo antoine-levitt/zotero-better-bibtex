@@ -492,7 +492,13 @@ export class PrefPane {
       this.checkCitekeyFormat()
       this.checkPostscript()
       await this.refresh()
-      if (typeof this.timer === 'undefined') this.timer = setInterval(this.refresh.bind(this), 500)
+      if (typeof this.timer === 'undefined') {
+        log.debug('3057: setting up refresh timer')
+        this.timer = setInterval(() => {
+          log.debug('3057: preference refresh')
+          void this.refresh()
+        }, 500)
+      }
     }
     catch (err) {
       log.error('error loading preferences:', err)
