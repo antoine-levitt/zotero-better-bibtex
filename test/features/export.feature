@@ -815,3 +815,8 @@ Feature: Export
   Scenario: `Error getCollections configure option not set` when exporting to citation graph #2319
     Given I import 2 references from "export/*.json"
     Then an export using "Citation graph" should match "export/*.dot"
+
+Scenario: Notes not included in bib file during bulk or collection exports #3073
+  When I import 86 references from "export/*.json"
+  And I set export option exportNotes to true
+  Then an export using "Better BibLaTeX" should match "export/*.biblatex"
