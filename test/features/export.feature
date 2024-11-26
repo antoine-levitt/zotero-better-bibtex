@@ -817,6 +817,6 @@ Feature: Export
     Then an export using "Citation graph" should match "export/*.dot"
 
 Scenario: Notes not included in bib file during bulk or collection exports #3073
-  When I import 86 references from "export/*.json"
+  When I import 85 references from "export/*.json"
   And I set export option exportNotes to true
   Then an export using "Better BibLaTeX" should match "export/*.biblatex"
