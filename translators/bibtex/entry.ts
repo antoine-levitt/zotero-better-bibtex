@@ -796,6 +796,7 @@ export class Entry {
 
     this.add({ name: 'annotation', value: this.item.extra, enc: 'extra' })
 
+    log.debug(`3073: ${this.item.title} ${this.translation.collected.displayOptions.exportNotes} ${this.item.notes?.length}`)
     if (this.translation.collected.displayOptions.exportNotes) {
       // if bibtexURL === 'note' is active, the note field will have been filled with an URL.
       // In all other cases, if this is attempting to overwrite the 'note' field, I want the test suite to throw an error
