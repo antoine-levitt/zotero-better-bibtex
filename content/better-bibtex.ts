@@ -769,7 +769,7 @@ export class BetterBibTeX {
         })
 
         if (is7) {
-          const columnDataKey = await Zotero.ItemTreeManager.registerColumn?.({
+          /* const columnDataKey = */ await Zotero.ItemTreeManager.registerColumn?.({
             dataKey: 'citationKey',
             label: l10n.localize('better-bibtex_zotero-pane_column_citekey'),
             pluginID: 'better-bibtex@iris-advies.com',
@@ -852,11 +852,13 @@ export class BetterBibTeX {
             },
           })
 
+          /*
           Events.on('items-changed', () => {
             // if (rowID) Zotero.ItemPaneManager.refreshInfoRow(rowID)
             // eslint-disable-next-line no-underscore-dangle
             if (columnDataKey && !Zotero.getActiveZoteroPane().itemPane.itemsView._columnPrefs[columnDataKey].hidden) Zotero.ItemTreeManager.refreshColumns()
           })
+          */
         }
 
         $Patcher$.execute()
